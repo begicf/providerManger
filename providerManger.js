@@ -1,9 +1,6 @@
 "use strict";
 let express = require('express');
 let bodyParser = require('body-parser');
-let Web3 = require('web3');
-const mumbai_server = "https://polygon-mumbai.infura.io/v3/5250187d69d747f392fcf1d32bbbc64a";
-let HDWalletProvider = require('@truffle/hdwallet-provider');
 require('dotenv').config({ path: '.env' }); // update process.env.
 
 const fs = require('fs');

@@ -13,13 +13,16 @@ services:
     stdin_open: true # docker run -i
     tty: true
     volumes:
-      - '/Users/beg/dev/secrets/:/secret/'
+      - '/Users/begicf/dev/secret:/secret/'
       - 'myPacioliWorkVolume:/workdir'
     command: /bin/bash
     networks:
       - audit_net
     depends_on:
       - web
+    environment:
+      PROVIDER_MANAGER: web:3333
+      PACIOLI_ENV: /secret/PacioliNode.env
 networks:
   audit_net:
     driver: bridge
